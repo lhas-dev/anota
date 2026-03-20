@@ -1,31 +1,79 @@
-# Files in the config/locales directory are used for internationalization and
-# are automatically loaded by Rails. If you want to use locales other than
-# English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t "hello"
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t("hello") %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more about the API, please read the Rails Internationalization guide
-# at https://guides.rubyonrails.org/i18n.html.
-#
-# Be aware that YAML interprets the following case-insensitive strings as
-# booleans: `true`, `false`, `on`, `off`, `yes`, `no`. Therefore, these strings
-# must be quoted to be interpreted as strings. For example:
-#
-#     en:
-#       "yes": yup
-#       enabled: "ON"
-
 en:
-  hello: "Hello world"
+  nav:
+    get_started: "Get started"
+    sign_in: "Sign in"
+    sign_out: "Sign out"
+
+  dashboard:
+    nav:
+      habit_tracker: "Habit Tracker"
+      daily_todos: "Daily Todos"
+      agenda: "Agenda"
+      clients: "Clients"
+      invoices: "Invoices"
+
+  home:
+    hero:
+      title: "Own your day."
+      subtitle: "Anota brings your habits, tasks, agenda, and invoices into one clean workspace — so you can focus on what matters."
+      cta_primary: "Get started — it's free"
+    features:
+      habit_tracker:
+        title: "Habit Tracker"
+        description: "Build streaks and track daily habits that compound over time."
+      todo_lists:
+        title: "To-Do Lists"
+        description: "Capture tasks and stay on top of everything that needs doing."
+      agenda:
+        title: "Agenda"
+        description: "Plan your week with a clean calendar view of what's coming up."
+      invoice_generator:
+        title: "Invoice Generator"
+        description: "Create and send professional invoices to clients in seconds."
+    footer:
+      copyright: "© %{year} Anota. All rights reserved."
+
+  sessions:
+    new:
+      title: "Welcome back"
+      subtitle: "Sign in to your Anota account."
+      email_label: "Email address"
+      email_placeholder: "you@example.com"
+      password_label: "Password"
+      password_placeholder: "Enter your password"
+      forgot_password: "Forgot password?"
+      submit: "Sign in"
+      no_account: "Don't have an account?"
+      sign_up_link: "Get started"
+
+  registrations:
+    new:
+      title: "Create your account"
+      subtitle: "Start owning your day — it's free."
+      email_label: "Email address"
+      email_placeholder: "you@example.com"
+      password_label: "Password"
+      password_placeholder: "Choose a strong password"
+      password_confirmation_label: "Confirm password"
+      password_confirmation_placeholder: "Repeat your password"
+      submit: "Create account"
+      have_account: "Already have an account?"
+      sign_in_link: "Sign in"
+
+  passwords:
+    new:
+      title: "Forgot your password?"
+      subtitle: "Enter your email and we'll send you reset instructions."
+      email_label: "Email address"
+      email_placeholder: "you@example.com"
+      submit: "Send reset instructions"
+      remember_password: "Remember your password?"
+      sign_in_link: "Sign in"
+    edit:
+      title: "Set a new password"
+      subtitle: "Choose a strong password for your account."
+      password_label: "New password"
+      password_placeholder: "Enter new password"
+      password_confirmation_label: "Confirm new password"
+      password_confirmation_placeholder: "Repeat new password"
+      submit: "Update password"

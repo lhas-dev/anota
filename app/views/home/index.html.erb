@@ -3,12 +3,13 @@
   <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
     <span class="text-xl font-bold tracking-tight text-slate-900">Anota</span>
     <div class="flex items-center gap-3">
+      <%= render "shared/locale_switcher" %>
       <% if authenticated? %>
         <span class="text-sm text-slate-500"><%= Current.user.email_address %></span>
-        <%= button_to "Sign out", session_path, method: :delete, class: "inline-flex items-center px-4 py-2 rounded-lg border border-neutral-200 text-slate-700 text-sm font-medium hover:bg-neutral-50 transition-colors cursor-pointer" %>
+        <%= button_to t("nav.sign_out"), session_path, method: :delete, class: "inline-flex items-center px-4 py-2 rounded-lg border border-neutral-200 text-slate-700 text-sm font-medium hover:bg-neutral-50 transition-colors cursor-pointer" %>
       <% else %>
-        <%= link_to "Sign in", new_session_path, class: "inline-flex items-center px-4 py-2 rounded-lg border border-neutral-200 text-slate-700 text-sm font-medium hover:bg-neutral-50 transition-colors" %>
-        <%= link_to "Get started", new_registration_path, class: "inline-flex items-center px-4 py-2 rounded-lg bg-slate-900 text-white text-sm font-medium hover:bg-slate-700 transition-colors" %>
+        <%= link_to t("nav.sign_in"), new_session_path, class: "inline-flex items-center px-4 py-2 rounded-lg border border-neutral-200 text-slate-700 text-sm font-medium hover:bg-neutral-50 transition-colors" %>
+        <%= link_to t("nav.get_started"), new_registration_path, class: "inline-flex items-center px-4 py-2 rounded-lg bg-slate-900 text-white text-sm font-medium hover:bg-slate-700 transition-colors" %>
       <% end %>
     </div>
   </div>
@@ -17,17 +18,17 @@
 <%# Hero %>
 <section class="max-w-6xl mx-auto px-6 pt-24 pb-20 text-center">
   <h1 class="text-6xl font-extrabold tracking-tight text-slate-900 leading-tight mb-6">
-    Own your day.
+    <%= t("home.hero.title") %>
   </h1>
   <p class="text-xl text-slate-500 max-w-2xl mx-auto mb-10 leading-relaxed">
-    Anota brings your habits, tasks, agenda, and invoices into one clean workspace — so you can focus on what matters.
+    <%= t("home.hero.subtitle") %>
   </p>
-  <div class="flex items-center justify-center gap-4 flex-wrap">
-    <%= link_to "Get started — it's free", new_registration_path, class: "inline-flex items-center px-6 py-3 rounded-xl bg-slate-900 text-white font-semibold hover:bg-slate-700 transition-colors text-base" %>
-    <a href="#features" class="inline-flex items-center px-6 py-3 rounded-xl border border-neutral-200 text-slate-700 font-semibold hover:bg-neutral-50 transition-colors text-base">
-      Learn more ↓
-    </a>
-  </div>
+  <% unless authenticated? %>
+    <div class="flex items-center justify-center gap-4 flex-wrap">
+      <%= link_to t("home.hero.cta_primary"), new_registration_path, class: "inline-flex items-center px-6 py-3 rounded-xl bg-slate-900 text-white font-semibold hover:bg-slate-700 transition-colors text-base" %>
+      <%= link_to t("nav.sign_in"), new_session_path, class: "inline-flex items-center px-6 py-3 rounded-xl border border-neutral-200 text-slate-700 font-semibold hover:bg-neutral-50 transition-colors text-base" %>
+    </div>
+  <% end %>
 </section>
 
 <%# Features grid %>
@@ -41,8 +42,8 @@
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
         </svg>
       </div>
-      <h3 class="font-semibold text-slate-900 mb-1">Habit Tracker</h3>
-      <p class="text-sm text-slate-500">Build streaks and track daily habits that compound over time.</p>
+      <h3 class="font-semibold text-slate-900 mb-1"><%= t("home.features.habit_tracker.title") %></h3>
+      <p class="text-sm text-slate-500"><%= t("home.features.habit_tracker.description") %></p>
     </div>
 
     <%# To-Do Lists %>
@@ -52,8 +53,8 @@
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
         </svg>
       </div>
-      <h3 class="font-semibold text-slate-900 mb-1">To-Do Lists</h3>
-      <p class="text-sm text-slate-500">Capture tasks and stay on top of everything that needs doing.</p>
+      <h3 class="font-semibold text-slate-900 mb-1"><%= t("home.features.todo_lists.title") %></h3>
+      <p class="text-sm text-slate-500"><%= t("home.features.todo_lists.description") %></p>
     </div>
 
     <%# Agenda %>
@@ -63,8 +64,8 @@
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
         </svg>
       </div>
-      <h3 class="font-semibold text-slate-900 mb-1">Agenda</h3>
-      <p class="text-sm text-slate-500">Plan your week with a clean calendar view of what's coming up.</p>
+      <h3 class="font-semibold text-slate-900 mb-1"><%= t("home.features.agenda.title") %></h3>
+      <p class="text-sm text-slate-500"><%= t("home.features.agenda.description") %></p>
     </div>
 
     <%# Invoice Generator %>
@@ -74,8 +75,8 @@
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
         </svg>
       </div>
-      <h3 class="font-semibold text-slate-900 mb-1">Invoice Generator</h3>
-      <p class="text-sm text-slate-500">Create and send professional invoices to clients in seconds.</p>
+      <h3 class="font-semibold text-slate-900 mb-1"><%= t("home.features.invoice_generator.title") %></h3>
+      <p class="text-sm text-slate-500"><%= t("home.features.invoice_generator.description") %></p>
     </div>
 
   </div>
@@ -85,6 +86,6 @@
 <footer class="border-t border-neutral-200 bg-neutral-50">
   <div class="max-w-6xl mx-auto px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-slate-500">
     <span class="font-semibold text-slate-700">Anota</span>
-    <span>&copy; <%= Time.current.year %> Anota. All rights reserved.</span>
+    <span><%= t("home.footer.copyright", year: Time.current.year) %></span>
   </div>
 </footer>

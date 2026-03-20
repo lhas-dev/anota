@@ -1,0 +1,5 @@
+<div class="flex items-center gap-1 text-sm">
+  <%= link_to "EN", url_for(locale: "en"), class: "px-2 py-1 rounded font-medium transition-colors #{I18n.locale.to_s == 'en' ? 'text-slate-900 bg-neutral-100' : 'text-slate-400 hover:text-slate-600'}" %>
+  <span class="text-neutral-300">|</span>
+  <%= link_to "PT", url_for(locale: "pt-BR"), class: "px-2 py-1 rounded font-medium transition-colors #{I18n.locale.to_s == 'pt-BR' ? 'text-slate-900 bg-neutral-100' : 'text-slate-400 hover:text-slate-600'}" %>
+</div>

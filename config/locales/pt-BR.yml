@@ -1,0 +1,79 @@
+pt-BR:
+  nav:
+    get_started: "Começar"
+    sign_in: "Entrar"
+    sign_out: "Sair"
+
+  dashboard:
+    nav:
+      habit_tracker: "Rastreador de Hábitos"
+      daily_todos: "Tarefas do Dia"
+      agenda: "Agenda"
+      clients: "Clientes"
+      invoices: "Faturas"
+
+  home:
+    hero:
+      title: "Domine o seu dia."
+      subtitle: "O Anota reúne seus hábitos, tarefas, agenda e faturas em um único espaço — para você focar no que realmente importa."
+      cta_primary: "Começar — é gratuito"
+    features:
+      habit_tracker:
+        title: "Rastreador de Hábitos"
+        description: "Crie sequências e acompanhe hábitos diários que se acumulam ao longo do tempo."
+      todo_lists:
+        title: "Listas de Tarefas"
+        description: "Registre tarefas e mantenha o controle de tudo o que precisa ser feito."
+      agenda:
+        title: "Agenda"
+        description: "Planeje sua semana com uma visualização limpa do que está por vir."
+      invoice_generator:
+        title: "Gerador de Faturas"
+        description: "Crie e envie faturas profissionais para clientes em segundos."
+    footer:
+      copyright: "© %{year} Anota. Todos os direitos reservados."
+
+  sessions:
+    new:
+      title: "Bem-vindo de volta"
+      subtitle: "Entre na sua conta Anota."
+      email_label: "Endereço de e-mail"
+      email_placeholder: "voce@exemplo.com"
+      password_label: "Senha"
+      password_placeholder: "Digite sua senha"
+      forgot_password: "Esqueceu a senha?"
+      submit: "Entrar"
+      no_account: "Não tem uma conta?"
+      sign_up_link: "Começar"
+
+  registrations:
+    new:
+      title: "Crie sua conta"
+      subtitle: "Comece a dominar o seu dia — é gratuito."
+      email_label: "Endereço de e-mail"
+      email_placeholder: "voce@exemplo.com"
+      password_label: "Senha"
+      password_placeholder: "Escolha uma senha forte"
+      password_confirmation_label: "Confirmar senha"
+      password_confirmation_placeholder: "Repita sua senha"
+      submit: "Criar conta"
+      have_account: "Já tem uma conta?"
+      sign_in_link: "Entrar"
+
+  passwords:
+    new:
+      title: "Esqueceu sua senha?"
+      subtitle: "Digite seu e-mail e enviaremos as instruções de redefinição."
+      email_label: "Endereço de e-mail"
+      email_placeholder: "voce@exemplo.com"
+      submit: "Enviar instruções"
+      remember_password: "Lembrou sua senha?"
+      sign_in_link: "Entrar"
+    edit:
+      title: "Definir nova senha"
+      subtitle: "Escolha uma senha forte para sua conta."
+      password_label: "Nova senha"
+      password_placeholder: "Digite a nova senha"
+      password_confirmation_label: "Confirmar nova senha"
+      password_confirmation_placeholder: "Repita a nova senha"
+      submit: "Atualizar senha"
