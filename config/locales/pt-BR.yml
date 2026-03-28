@@ -1,4 +1,14 @@
 pt-BR:
+  date:
+    month_names: [~, Janeiro, Fevereiro, Março, Abril, Maio, Junho, Julho, Agosto, Setembro, Outubro, Novembro, Dezembro]
+    abbr_month_names: [~, Jan, Fev, Mar, Abr, Mai, Jun, Jul, Ago, Set, Out, Nov, Dez]
+    day_names: [Domingo, Segunda-feira, Terça-feira, Quarta-feira, Quinta-feira, Sexta-feira, Sábado]
+    abbr_day_names: [Dom, Seg, Ter, Qua, Qui, Sex, Sáb]
+    formats:
+      default: "%d/%m/%Y"
+      long: "%d de %B de %Y"
+      short: "%d de %B"
+
   nav:
     get_started: "Começar"
     sign_in: "Entrar"
@@ -77,3 +87,63 @@ pt-BR:
       password_confirmation_label: "Confirmar nova senha"
       password_confirmation_placeholder: "Repita a nova senha"
       submit: "Atualizar senha"
+
+  habits_tracker:
+    title: "Rastreador de Hábitos"
+    subtitle: "Acompanhe seus hábitos diários e construa consistência."
+    calendar: "Calendário"
+    calendar_subtitle: "Veja o histórico do seu hábito por mês."
+    back_to_tracker: "Voltar ao Rastreador"
+    new_habit: "Novo Hábito"
+    todays_score: "Pontuação de Hoje"
+    total_score: "Pontuação Total"
+    mark_done: "Feito"
+    undo: "Desfazer"
+    empty_title: "Nenhum hábito ainda"
+    empty_description: "Crie seu primeiro hábito para começar a acompanhar."
+    create_first: "Crie seu primeiro hábito"
+    manage_habits: "Gerenciar todos os hábitos"
+    select_habit: "Selecione um hábito"
+    calendar_stats: "%{tracked} de %{total} dias rastreados"
+    days:
+      sun: "Dom"
+      mon: "Seg"
+      tue: "Ter"
+      wed: "Qua"
+      thu: "Qui"
+      fri: "Sex"
+      sat: "Sáb"
+
+  habits:
+    created: "Hábito criado com sucesso."
+    updated: "Hábito atualizado com sucesso."
+    deleted: "Hábito excluído com sucesso."
+    new_title: "Novo Hábito"
+    edit_title: "Editar Hábito"
+    index_title: "Gerenciar Hábitos"
+    index_subtitle: "Crie, edite e remova seus hábitos."
+    edit: "Editar"
+    delete: "Excluir"
+    confirm_delete: "Tem certeza que deseja excluir este hábito? Todo o histórico será perdido."
+    form:
+      name: "Nome"
+      name_placeholder: "ex: Praticar Jiu-Jitsu"
+      description: "Descrição"
+      description_placeholder: "Detalhes opcionais sobre este hábito"
+      color: "Cor"
+      color_hint: "Escolha uma cor para o calendário"
+      cancel: "Cancelar"
+
+  habits_mailer:
+    daily_report:
+      subject: "Seu Relatório Diário de Hábitos"
+      greeting: "Olá!"
+      summary: "Aqui está o resumo dos seus hábitos para %{date}:"
+      completed: "Hábitos Completados"
+      missed: "Hábitos Perdidos"
+      todays_score: "Pontuação de Hoje"
+      total_score: "Pontuação Total"
+      no_habits_completed: "Nenhum hábito completado hoje."
+      no_habits_missed: "Todos os hábitos completados! Ótimo trabalho!"
+      view_tracker: "Ver Rastreador de Hábitos"
+      footer: "Continue construindo ótimos hábitos!"

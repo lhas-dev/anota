@@ -15,4 +15,17 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "home#index"
   get "dashboard", to: "dashboard#index", as: :dashboard
+
+  resources :habits_tracker, only: [ :index ], controller: "habits_tracker" do
+    collection do
+      get :calendar
+    end
+  end
+
+  resources :habits, except: [ :show ] do
+    resource :tracking, only: [ :create, :destroy ], controller: "habit_trackings"
+    collection do
+      patch :sort
+    end
+  end
 end

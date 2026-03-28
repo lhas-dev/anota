@@ -1,0 +1,37 @@
+<%= form_with(model: habit, class: "space-y-6") do |f| %>
+  <% if habit.errors.any? %>
+    <div class="px-4 py-3 rounded-lg bg-red-50 border border-red-200 text-red-700 text-sm">
+      <ul class="list-disc list-inside">
+        <% habit.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= f.label :name, t("habits.form.name"), class: "block text-sm font-medium text-slate-700 mb-1" %>
+    <%= f.text_field :name, required: true, placeholder: t("habits.form.name_placeholder"),
+        class: "w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition-colors" %>
+  </div>
+
+  <div>
+    <%= f.label :description, t("habits.form.description"), class: "block text-sm font-medium text-slate-700 mb-1" %>
+    <%= f.text_area :description, rows: 3, placeholder: t("habits.form.description_placeholder"),
+        class: "w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition-colors resize-none" %>
+  </div>
+
+  <div>
+    <%= f.label :color, t("habits.form.color"), class: "block text-sm font-medium text-slate-700 mb-1" %>
+    <div class="flex items-center gap-3">
+      <%= f.color_field :color, value: habit.color || "#6366f1",
+          class: "w-10 h-10 rounded-lg border border-slate-300 cursor-pointer" %>
+      <span class="text-sm text-slate-500"><%= t("habits.form.color_hint") %></span>
+    </div>
+  </div>
+
+  <div class="flex items-center gap-3 pt-2">
+    <%= f.submit class: "inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-indigo-600 rounded-lg hover:bg-indigo-700 transition-colors cursor-pointer" %>
+    <%= link_to t("habits.form.cancel"), habits_tracker_index_path, class: "inline-flex items-center px-4 py-2 text-sm font-medium text-slate-700 bg-white border border-slate-200 rounded-lg hover:bg-slate-50 transition-colors" %>
+  </div>
+<% end %>
