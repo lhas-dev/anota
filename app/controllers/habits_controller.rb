@@ -14,7 +14,7 @@ class HabitsController < ApplicationController
     @habit = Current.user.habits.build(habit_params)
 
     if @habit.save
-      redirect_to habits_tracker_index_path, notice: t("habits.created")
+      redirect_to habits_tracker_index_path, status: :see_other, notice: t("habits.created")
     else
       render :new, status: :unprocessable_entity
     end
@@ -25,7 +25,7 @@ class HabitsController < ApplicationController
 
   def update
     if @habit.update(habit_params)
-      redirect_to habits_tracker_index_path, notice: t("habits.updated")
+      redirect_to habits_tracker_index_path, status: :see_other, notice: t("habits.updated")
     else
       render :edit, status: :unprocessable_entity
     end
@@ -33,7 +33,7 @@ class HabitsController < ApplicationController
 
   def destroy
     @habit.destroy
-    redirect_to habits_tracker_index_path, notice: t("habits.deleted")
+    redirect_to habits_tracker_index_path, status: :see_other, notice: t("habits.deleted")
   end
 
   def sort
